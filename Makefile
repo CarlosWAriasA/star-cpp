@@ -1,20 +1,14 @@
-LIBS = -L. \
-	   -L./lib \
-      -lglew32\
-	  -lglfw3 \
-	  -lopengl32 \
-	  -lgdi32
-
-INCLUDES = -I./includes
-
+CC = g++
+CFLAGS = -std=c++17 -w
+LDFLAGS = -L. -L./lib -lglew32 -lglfw3 -lopengl32 -lgdi32
+INCLUDE = -I./includes
 SRC = src/main.cpp
-
 OBJ = main.o
-
-WARNINGS=-w
-
-FLAGS=-std=c++17
+EXEC = main.exe  
 
 all:
-	g++ -c $(SRC) $(INCLUDES) $(WARNINGS) $(FLAGS)
-	g++ $(OBJ) $(LIBS) $(INCLUDES) -o main.exe $(WARNINGS) $(FLAGS)
+	$(CC) -c $(SRC) $(INCLUDE) $(CFLAGS)  
+	$(CC) $(OBJ) $(LDFLAGS) -o $(EXEC) $(CFLAGS)  
+
+clean:
+	del /f $(OBJ) $(EXEC)
