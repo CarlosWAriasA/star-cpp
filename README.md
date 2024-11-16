@@ -19,5 +19,3 @@ Then run the generated output from Windows Power shell.
 ```
 ./main.exe
 ```
-
-Pull requests for supporting other platforms are welcome, or I can add this support on request. You can contact us at raydelto@yahoo.com.
